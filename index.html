@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Neness 💙</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ min-height:100vh;
+ font-family:'Trebuchet MS',sans-serif;
+ background:linear-gradient(180deg,#68baf0,#b9e5ff,#edf8ff);
+ color:#315d80;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:70px 15px 35px;
+ overflow-x:hidden;
+}
+
+.sky{
+ position:fixed;
+ inset:0;
+ overflow:hidden;
+ pointer-events:none;
+}
+
+.cloud{
+ position:absolute;
+ font-size:65px;
+ animation:float 22s linear infinite;
+}
+.c1{top:8%;left:-100px}
+.c2{top:75%;left:-150px;animation-delay:-8s}
+.c3{top:40%;left:-180px;animation-delay:-15s}
+
+@keyframes float{
+ from{transform:translateX(0)}
+ to{transform:translateX(120vw)}
+}
+
+.star{
+ position:absolute;
+ color:white;
+ animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+ from{opacity:.3;transform:scale(.8)}
+ to{opacity:1;transform:scale(1.3)}
+}
+
+.music{
+ position:fixed;
+ top:15px;
+ right:15px;
+ z-index:10;
+ border:1px solid white;
+ border-radius:30px;
+ padding:11px 16px;
+ background:#ffffffdd;
+ color:#3975a2;
+ cursor:pointer;
+}
+
+.container{
+ position:relative;
+ z-index:2;
+ width:100%;
+ max-width:430px;
+ min-height:510px;
+ background:#ffffffdf;
+ border:2px solid white;
+ border-radius:30px;
+ padding:30px 24px;
+ text-align:center;
+ box-shadow:0 15px 40px #3975a233;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+}
+
+.page{display:none;animation:appear .6s ease}
+.page.active{display:block}
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+h1{color:#397caf;font-size:27px;margin:10px 0}
+h2{color:#5799c8;font-size:21px}
+
+p{
+ color:#607f9b;
+ line-height:1.9;
+ font-size:15px;
+}
+
+.emoji{font-size:60px;margin-bottom:10px}
+
+.next{
+ background:#65b5e8;
+ color:white;
+ border:none;
+ border-radius:30px;
+ padding:13px 28px;
+ font-size:14px;
+ font-weight:bold;
+ margin:18px 4px 0;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.next:hover{background:#398dc8;transform:translateY(-3px)}
+
+.progress{
+ margin-top:25px;
+ font-size:12px;
+ letter-spacing:3px;
+ color:#81a9c9;
+}
+
+.bar{
+ height:5px;
+ background:#dceefa;
+ border-radius:10px;
+ margin-top:10px;
+ overflow:hidden;
+}
+
+.fill{
+ height:100%;
+ width:8.33%;
+ background:#62b4e9;
+ transition:.5s;
+}
+
+.ending{color:#408fc5;font-weight:bold;font-size:19px}
+
+.heart{font-size:25px;color:#78b9e5}
+
+/* BONEKA KUCING */
+
+.kitty{
+ position:relative;
+ width:150px;
+ height:150px;
+ margin:0 auto 10px;
+ animation:kittyBounce 2s infinite ease-in-out;
+}
+
+.kitty-face{
+ position:absolute;
+ width:95px;
+ height:78px;
+ background:#fff;
+ border:3px solid #b6d9ed;
+ border-radius:48%;
+ top:25px;
+ left:27px;
+ z-index:2;
+}
+
+.kitty-ear{
+ position:absolute;
+ width:35px;
+ height:42px;
+ background:#fff;
+ border:3px solid #b6d9ed;
+ border-radius:70% 20% 50% 30%;
+ top:8px;
+}
+
+.kitty-ear.left{left:28px;transform:rotate(-25deg)}
+.kitty-ear.right{right:28px;transform:rotate(25deg) scaleX(-1)}
+
+.eye{
+ position:absolute;
+ top:27px;
+ font-size:22px;
+ color:#527c9e;
+}
+
+.left-eye{left:22px}
+.right-eye{right:22px}
+
+.nose{
+ position:absolute;
+ top:43px;
+ left:43px;
+ font-size:10px;
+ color:#e99bb5;
+}
+
+.mouth{
+ position:absolute;
+ top:42px;
+ left:39px;
+ font-size:14px;
+ color:#527c9e;
+}
+
+.whisker{
+ position:absolute;
+ top:39px;
+ color:#a4c5da;
+ font-size:13px;
+}
+
+.left-whisker{left:-17px}
+.right-whisker{right:-17px}
+
+.kitty-body{
+ position:absolute;
+ top:90px;
+ left:48px;
+ width:55px;
+ height:48px;
+ background:white;
+ border:3px solid #b6d9ed;
+ border-radius:50% 50% 40% 40%;
+ color:#e99bb5;
+ font-size:24px;
+ padding-top:8px;
+}
+
+.kitty-caption{
+ position:absolute;
+ top:140px;
+ width:100%;
+ font-size:11px;
+ color:#75a7cb;
+}
+
+@keyframes kittyBounce{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-8px)}
+}
+
+.confetti{
+ position:fixed;
+ top:-30px;
+ z-index:20;
+ pointer-events:none;
+ animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(700deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky">
+ <div class="cloud c1">☁️</div>
+ <div class="cloud c2">☁️</div>
+ <div class="cloud c3">☁️</div>
+</div>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">
+♫ Play Birthday Song
+</button>
+
+<div class="container">
+
+<!-- BONEKA KUCING -->
+<div class="kitty">
+ <div class="kitty-ear left"></div>
+ <div class="kitty-ear right"></div>
+ <div class="kitty-face">
+  <span class="eye left-eye">•</span>
+  <span class="eye right-eye">•</span>
+  <span class="nose">♥</span>
+  <span class="mouth">ω</span>
+  <span class="whisker left-whisker">≋</span>
+  <span class="whisker right-whisker">≋</span>
+ </div>
+ <div class="kitty-body">♡</div>
+ <div class="kitty-caption">little birthday kitty</div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page active">
+ <div class="emoji">☁️</div>
+ <h1>Hey, Neness!</h1>
+ <p>
+ Helloooo! Someone has a special day today!<br>
+ And guess what?<br>
+ It's YOUR BIRTHDAY!!
+ </p>
+ <p>I've prepared a little surprise for you. Hehe.</p>
+ <button class="next" onclick="nextPage()">OPEN IT! ♡</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+ <div class="emoji">🌤️</div>
+ <h1>Before We Start...</h1>
+ <p>
+ First of all, congratulations!<br>
+ Kamu berhasil melewati satu tahun lagi
+ dengan segala drama, cerita, dan kejutan kehidupan.
+ </p>
+ <p>Achievement unlocked: Another year older! 🏆</p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+ <div class="emoji">🎂</div>
+ <h1>HAPPY BIRTHDAY!</h1>
+ <p>SELAMAT ULANG TAHUN, NENESS!! 🥳</p>
+ <p>
+ Semoga hari ini jadi salah satu hari
+ paling menyenangkan dalam hidupmu.
+ Jangan lupa bahagia, hari ini kamu pemeran utamanya!
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+ <div class="emoji">🎈</div>
+ <h1>Official Announcement</h1>
+ <p>
+ Attention, everyone!<br>
+ Hari ini Neness resmi naik level!
+ </p>
+ <p>
+ Umur bertambah, pengalaman bertambah,
+ semoga rezeki juga ikut bertambah.
+ </p>
+ <p>But please, jangan bertambah beban pikirannya. 😭</p>
+ <button class="next" onclick="nextPage()">HAHA, NEXT →</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+ <div class="emoji">🌈</div>
+ <h1>A Little Wish</h1>
+ <p>
+ I hope you get everything you've been
+ quietly wishing for.
+ </p>
+ <p>
+ Semoga semua hal baik datang menghampirimu,
+ semua urusan dipermudah,
+ dan setiap langkahmu membawa kebahagiaan.
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+ <div class="emoji">🦋</div>
+ <h1>Keep Growing!</h1>
+ <p>
+ Jangan takut mencoba hal baru.
+ Jangan terlalu keras sama diri sendiri.
+ </p>
+ <p>
+ You don't have to be perfect.
+ Just keep learning, growing,
+ and becoming a better version of yourself.
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+ <div class="emoji">☀️</div>
+ <h1>For Your Bad Days</h1>
+ <p>
+ Kalau suatu hari semuanya terasa melelahkan,
+ ingat bahwa kamu nggak harus selalu
+ punya semuanya figured out.
+ </p>
+ <p>
+ Take a break, breathe, and try again.
+ Tomorrow is another chance!
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+ <div class="emoji">🧸</div>
+ <h1>Thank You, Neness!</h1>
+ <p>
+ Thank you for being you.
+ Terima kasih untuk setiap cerita,
+ tawa, dan momen kecil yang pernah ada.
+ </p>
+ <p>
+ Semoga kita punya lebih banyak
+ cerita seru untuk dikenang!
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page">
+ <div class="emoji">⭐</div>
+ <h1>Remember This</h1>
+ <p>
+ You are special in your own way.
+ Jangan pernah merasa tertinggal
+ hanya karena perjalananmu berbeda.
+ </p>
+ <p>
+ Your own timeline, your own story.
+ Keep shining, Neness!
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page">
+ <div class="emoji">💌</div>
+ <h1>A Small Prayer</h1>
+ <p>
+ Semoga kamu selalu dikelilingi orang-orang
+ baik, diberikan kesehatan,
+ hati yang tenang, dan alasan untuk tersenyum.
+ </p>
+ <p>
+ May life be kinder to you
+ and may happiness find you everywhere.
+ </p>
+ <button class="next" onclick="nextPage()">NEXT →</button>
+</div>
+
+<!-- PAGE 11 -->
+<div class="page">
+ <div class="emoji">🎁</div>
+ <h1>Almost There!</h1>
+ <p>
+ Okay, this is getting emotional...
+ padahal niat awalnya cuma mau ngucapin HBD. 😭
+ </p>
+ <p>
+ Anyway, I hope you enjoyed this little surprise.
+ There's one last message waiting for you!
+ </p>
+ <button class="next" onclick="nextPage()">OPEN LAST MESSAGE →</button>
+</div>
+
+<!-- PAGE 12 -->
+<div class="page">
+ <div class="emoji">🎉🎂🎉</div>
+ <h1>Happy Birthday, Neness!</h1>
+ <p class="ending">This is your day, so make it count!</p>
+ <p>
+ Semoga tahun ini menjadi bab yang indah
+ dalam hidupmu. Teruslah tertawa,
+ bermimpi, dan jadi diri sendiri.
+ </p>
+ <p>
+ Stay happy, stay healthy,
+ and never lose your sparkle!
+ </p>
+ <div class="heart">♡ ♡ ♡</div>
+ <h2>With lots of wishes,</h2>
+ <p>Your friend! 💙</p>
+ <button class="next" onclick="restart()">READ AGAIN ↻</button>
+</div>
+
+<div class="progress" id="progress">01 / 12</div>
+<div class="bar"><div class="fill" id="fill"></div></div>
+
+</div>
+
+<!-- YOUTUBE PLAYER -->
+<div id="youtubePlayer"
+style="position:fixed;left:-9999px;top:0">
+</div>
+
+<script>
+// STARS
+for(let i=0;i<35;i++){
+ let s=document.createElement("span");
+ s.className="star";
+ s.innerHTML="✦";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.fontSize=(8+Math.random()*12)+"px";
+ s.style.animationDelay=Math.random()*3+"s";
+ document.getElementById("sky").appendChild(s);
+}
+
+// NEXT PAGE
+let current=0;
+const pages=document.querySelectorAll(".page");
+
+function nextPage(){
+ pages[current].classList.remove("active");
+ current++;
+ pages[current].classList.add("active");
+ updateProgress();
+
+ if(current===11) celebration();
+}
+
+function restart(){
+ pages[current].classList.remove("active");
+ current=0;
+ pages[current].classList.add("active");
+ updateProgress();
+}
+
+function updateProgress(){
+ document.getElementById("progress").innerText=
+ String(current+1).padStart(2,"0")+" / 12";
+
+ document.getElementById("fill").style.width=
+ ((current+1)/12*100)+"%";
+}
+
+// CONFETTI
+function celebration(){
+ const emojis=["🎉","🎊","⭐","💙","☁️","✨","🎈"];
+
+ for(let i=0;i<65;i++){
+  let c=document.createElement("div");
+  c.className="confetti";
+  c.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  c.style.left=Math.random()*100+"vw";
+  c.style.animationDelay=Math.random()*2+"s";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),6500);
+ }
+}
+
+// YOUTUBE MUSIC
+let player;
+let isPlaying=false;
+let playerReady=false;
+
+function onYouTubeIframeAPIReady(){
+ player=new YT.Player("youtubePlayer",{
+  height:"1",
+  width:"1",
+  videoId:"ZBXFD5tbPag",
+  playerVars:{
+   autoplay:0,
+   controls:1,
+   playsinline:1
+  },
+  events:{
+   onReady:function(){
+    playerReady=true;
+   }
+  }
+ });
+}
+
+function toggleMusic(){
+ const btn=document.getElementById("musicBtn");
+
+ if(!playerReady){
+  btn.innerText="♫ Loading...";
+  return;
+ }
+
+ if(!isPlaying){
+  player.playVideo();
+  isPlaying=true;
+  btn.innerText="♫ Music On";
+ }else{
+  player.pauseVideo();
+  isPlaying=false;
+  btn.innerText="♫ Play Birthday Song";
+ }
+}
+</script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</body>
+  </html>
+  
